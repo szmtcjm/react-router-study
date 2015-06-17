@@ -1,10 +1,14 @@
-var React = require('react');
+import React from 'react';
 
-
-var Inbox = React.createClass({
-  render: function () {
-    return <h2>Inbox</h2>;
+let Inbox = React.createClass({
+  render() {
+    return (
+      <div>
+        <h2>Inbox</h2>
+        {this.props.children || "Welcome to your Inbox"}
+      </div>
+    );
   }
 });
 
-module.exports = Inbox;
+export default Inbox;

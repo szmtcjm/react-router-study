@@ -1,25 +1,23 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: './router.jsx',
+  entry: './src/js/main.js',
   output: {
-    path: 'dist',
+    path: path.resolve(__dirname, 'build/js'),
     filename: 'bundle.js'
   },
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'jsx-loader?harmony'
+        loader: 'babel-loader'
       }
     ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  externals: {
-    'react': 'React',
-    'react-router': 'ReactRouter'
-  }
+  plugins:[new webpack.optimize.UglifyJsPlugin()]
 }

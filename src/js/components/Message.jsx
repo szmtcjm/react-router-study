@@ -1,9 +1,10 @@
-var React = require('react');
+import React, {Component} from 'react';
 
-var Message = React.createClass({
-  render () {
-    return <h3>Message</h3>;
+export default class Message extends Component {
+  render() {
+    return (
+      <h3>Message</h3>
+    );
+
   }
-});
-
-module.exports = Message;
+};
